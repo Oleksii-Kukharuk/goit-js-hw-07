@@ -16,21 +16,13 @@ function galleryMarkup(items) {
 }
 
 const addMarkup = galleryMarkup(galleryItems);
-gallryRef.innerHTML = addMarkup;
+gallryRef.insertAdjacentHTML("beforeend", addMarkup);
 
-gallryRef.addEventListener("click", imgSelect);
-
-function imgSelect(event) {
-  event.preventDefault();
-  if (event.target.nodeName !== "IMG") {
-    return;
-  }
-  const lightbox = new SimpleLightbox(".gallery a", {
-    captionType: "alt",
-    captionsData: "alt",
-    captionDelay: 250,
-    showCounter: false,
-    maxZoom: 2,
-    scrollZoomFactor: 0.1,
-  });
-}
+const lightbox = new SimpleLightbox(".gallery a", {
+  captionType: "alt",
+  captionsData: "alt",
+  captionDelay: 250,
+  showCounter: false,
+  maxZoom: 2,
+  scrollZoomFactor: 0.1,
+});
