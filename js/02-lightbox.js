@@ -8,9 +8,9 @@ const gallryRef = document.querySelector(".gallery");
 function galleryMarkup(items) {
   return items
     .map(
-      (item) => `<a class="gallery__item" href="${item.original}">
+      (item) => `<li><a class="gallery__item" href="${item.original}">
     <img class="gallery__image" src="${item.preview}"  alt="${item.description}">
-    </a></div>`
+    </a></li>`
     )
     .join("");
 }
