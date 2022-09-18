@@ -8,7 +8,7 @@ const gallryRef = document.querySelector(".gallery");
 function galleryMarkup(items) {
   return items
     .map(
-      (item) => `<a class="gallery__item" src="${item.original}">
+      (item) => `<a class="gallery__item" href="${item.original}">
     <img class="gallery__image" src="${item.preview}"  alt="${item.description}">
     </a></div>`
     )
@@ -25,5 +25,12 @@ function imgSelect(event) {
   if (event.target.nodeName !== "IMG") {
     return;
   }
-  let lightbox = new SimpleLightbox(".gallery a");
+  const lightbox = new SimpleLightbox(".gallery a", {
+    captionType: "alt",
+    captionsData: "alt",
+    captionDelay: 250,
+    showCounter: false,
+    maxZoom: 2,
+    scrollZoomFactor: 0.1,
+  });
 }
