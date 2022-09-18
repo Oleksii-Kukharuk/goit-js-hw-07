@@ -18,7 +18,7 @@ function galleryMarkup(items) {
 }
 
 const addMarkup = galleryMarkup(galleryItems);
-gallryRef.innerHTML = addMarkup;
+gallryRef.insertAdjacentHTML("beforeend", addMarkup);
 
 gallryRef.addEventListener("click", imgSelect);
 
